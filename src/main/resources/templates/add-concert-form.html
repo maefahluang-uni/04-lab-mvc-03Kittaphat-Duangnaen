@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Concert</title>
 </head>
+
 <body>
     <h1>Add Concert</h1>
     <!-- add form for adding concert-->
+    <form th:action="@{/concerts}" th:object="${concert}" method="post">
+        <!-- Title -->
+        <label for="title"> Title : </Title>:</label>
+        <input type="text" id="title" th:field="*{title}" required><br>
+
+        <!-- Performer -->
+        <label for="performer">Performer : </label>
+        <input type="text" id="performer" th:field="*{performer}" required><br>
+
+        <!-- Date -->
+        <label for="date">Date:</label>
+        <input type="date" id="date" th:field="*{date}" required><br>
+
+        <!-- Description -->
+        <label for="description">Description:</label>
+        <input type="description" id="description" th:field="*{description}" required><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Save Concert</button>
+    </form>
 </body>
+
 </html>
